@@ -35,7 +35,14 @@ class UrlHelper
         $suffix = end(explode('.',$filename));
 
         if (Config::$enableImgStyle && $suffix != 'gif') {
-            foreach(array('thumbnail', 'post-thumbnail', 'medium', 'medium_large', 'large', 'full') as $style ) {
+
+        	// 给rzxme用的缩略图名称
+            // foreach(array('thumbnail', 'post-thumbnail', 'medium', 'medium_large', 'large', 'full','portfolio-square','menu-featured-post','qode-carousel_slider','portfolio_slider','rui-Thum','fuckyouarefuck') as $style ) {    
+
+            // 给storyboard用的缩略图名称        
+            foreach(array('thumbnail', 'post-thumbnail', 'medium', 'medium_large', 'large', 'full','blog-one','half-landscape','featured-image','gallery-links') as $style ) {
+
+
                 if (isset($data['sizes'][$style]))
                     $data['sizes'][$style]['file'] = $this->aliImageStyle($filename, $style);
             }
